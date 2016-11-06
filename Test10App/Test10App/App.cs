@@ -11,34 +11,34 @@ namespace Test10App
     {
         public App()
         {
-            Image logo = new Image
+            Image about_me = new Image
             {
                 Aspect = Aspect.AspectFit,
-                Source = ImageSource.FromFile("logo.png"),
-                WidthRequest = 180,
-                HeightRequest = 170,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-            };
-            Image tracker = new Image
-            {
-                Aspect = Aspect.AspectFit,
-                Source = ImageSource.FromFile("icon_tracker.png"),
+                Source = ImageSource.FromFile("icon_about_me.png"),
                 WidthRequest = 120,
                 HeightRequest = 170,
                 HorizontalOptions = LayoutOptions.Start,
             };
-            Image updates = new Image
+            Image images = new Image
             {
                 Aspect = Aspect.AspectFit,
-                Source = ImageSource.FromFile("icon_updates.png"),
+                Source = ImageSource.FromFile("icon_camera.png"),
                 WidthRequest = 120,
                 HeightRequest = 170,
                 HorizontalOptions = LayoutOptions.Start,
             };
-            Image more = new Image
+            Image support= new Image
             {
                 Aspect = Aspect.AspectFit,
-                Source = ImageSource.FromFile("icon_more.png"),
+                Source = ImageSource.FromFile("icon_support.png"),
+                WidthRequest = 120,
+                HeightRequest = 170,
+                HorizontalOptions = LayoutOptions.Start,
+            };
+            Image movies = new Image
+            {
+                Aspect = Aspect.AspectFit,
+                Source = ImageSource.FromFile("icon_movies.png"),
                 WidthRequest = 120,
                 HeightRequest = 170,
                 HorizontalOptions = LayoutOptions.Start,
@@ -57,7 +57,8 @@ namespace Test10App
                             HorizontalOptions = LayoutOptions.StartAndExpand,
                             Children =
                             { 
-                                logo
+                                about_me,
+                                images,
                             }
                         },
                         new StackLayout
@@ -66,9 +67,8 @@ namespace Test10App
                             HorizontalOptions = LayoutOptions.StartAndExpand,
                             Children =
                             {
-                                tracker,
-                                updates,
-                                more
+                                support,
+                                movies
                             }
                         }
                     }
