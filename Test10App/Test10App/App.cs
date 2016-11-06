@@ -11,115 +11,13 @@ namespace Test10App
     {
         public App()
         {
-            Image xsocks = new Image
-            {
-                Aspect = Aspect.AspectFit,
-                Source = ImageSource.FromFile("x_socks_logo.png"),
-                WidthRequest = 180,
-                HeightRequest = 170,
-                HorizontalOptions = LayoutOptions.Start,
-            };
-            xsocks.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    Device.OpenUri(new Uri("https://www.x-socks.com/"));
-                }),
-                NumberOfTapsRequired = 1
-            });
-
-            Image ortlieb = new Image
-            {
-                Aspect = Aspect.AspectFit,
-                Source = ImageSource.FromFile("ortlieb_logo.png"),
-                WidthRequest = 220,
-                HeightRequest = 170,
-                HorizontalOptions = LayoutOptions.End,
-            };
-            ortlieb.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    Device.OpenUri(new Uri("https://www.ortlieb.com"));
-                }),
-                NumberOfTapsRequired = 1
-            });
-
-            Image technolyt = new Image
-            {
-                Aspect = Aspect.AspectFit,
-                Source = ImageSource.FromFile("logo_Technolyt_payoff_FC.png"),
-                WidthRequest = 180,
-                HeightRequest = 170,
-                HorizontalOptions = LayoutOptions.Start,
-            };
-            technolyt.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    Device.OpenUri(new Uri("http://www.technolyt.nl/"));
-                }),
-                NumberOfTapsRequired = 1
-            });
-
-            Image santos = new Image
-            {
-                Aspect = Aspect.AspectFit,
-                Source = ImageSource.FromFile("logo_santos_built_for_life_kader.png"),
-                WidthRequest = 200,
-                HeightRequest = 170,
-                HorizontalOptions = LayoutOptions.End
-            };
-            santos.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    Device.OpenUri(new Uri("http://www.santosbikes.com/"));
-                }),
-                NumberOfTapsRequired = 1
-            });
-
-            Image kok = new Image
-            {
-                Aspect = Aspect.AspectFit,
-                Source = ImageSource.FromFile("logo_kok_fietsen.png"),
-                WidthRequest = 200,
-                HeightRequest = 170,
-                HorizontalOptions = LayoutOptions.Start
-            };
-            kok.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    Device.OpenUri(new Uri("http://kokfietsen.nl/"));
-                }),
-                NumberOfTapsRequired = 1
-            });
-
-            Image xtorm = new Image
-            {
-                Aspect = Aspect.AspectFit,
-                Source = ImageSource.FromFile("xtorm_logo_nobg_tc_greyfc_hr.png"),
-                WidthRequest = 200,
-                HeightRequest = 170,
-                HorizontalOptions = LayoutOptions.End
-            };
-            xtorm.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() =>
-                {
-                    Device.OpenUri(new Uri("http://www.xtorm.eu/nl/home/"));
-                }),
-                NumberOfTapsRequired = 1
-            });
-
             // The root page of your application
             MainPage = new ContentPage
             {
                 BackgroundImage = "blauwe_achtergrond.jpg",
                 Content = new StackLayout
                 {
-                    VerticalOptions = LayoutOptions.Center,
+                    VerticalOptions = LayoutOptions.StartAndExpand,
                     Children = {
                         new StackLayout
                         {
@@ -127,8 +25,11 @@ namespace Test10App
                             HorizontalOptions = LayoutOptions.StartAndExpand,
                             Children =
                             {
-                                ortlieb,
-                                xsocks,
+                                new Label {
+                                    Text = "About Rick",
+                                    FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)),
+                                    HorizontalOptions = LayoutOptions.CenterAndExpand,
+                                }
                             }
                         },
                         new StackLayout
@@ -137,21 +38,13 @@ namespace Test10App
                             HorizontalOptions = LayoutOptions.StartAndExpand,
                             Children =
                             {
-                                kok,
-                                santos
+                                new Label {
+                                    Text = "My name is Rick Creemers, 22 years old, from Utrecht. Nice to meet you! My big adventure with lots of up's and downs started when I was 16 years old. My sister started studying and decided to move to Amsterdam. My mother, stepfather and little sister also moved out, they followed their life long dream and emigrated to France. I stayed in Holland and after graduating from secondary school I started living on my own in Utrecht. ",
+                                    FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
+                                    HorizontalOptions = LayoutOptions.CenterAndExpand,
+                                }
                             }
-                        },
-                        new StackLayout
-                        {
-                            Orientation = StackOrientation.Horizontal,
-                            HorizontalOptions = LayoutOptions.StartAndExpand,
-                            Children =
-                            {
-                                technolyt,
-                                xtorm
-                            }
-                        },
-
+                        }
                     }
                 }
             };
