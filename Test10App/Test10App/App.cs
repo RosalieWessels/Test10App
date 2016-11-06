@@ -11,6 +11,38 @@ namespace Test10App
     {
         public App()
         {
+            Image logo = new Image
+            {
+                Aspect = Aspect.AspectFit,
+                Source = ImageSource.FromFile("logo.png"),
+                WidthRequest = 180,
+                HeightRequest = 170,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+            };
+            Image tracker = new Image
+            {
+                Aspect = Aspect.AspectFit,
+                Source = ImageSource.FromFile("icon_tracker.png"),
+                WidthRequest = 120,
+                HeightRequest = 170,
+                HorizontalOptions = LayoutOptions.Start,
+            };
+            Image updates = new Image
+            {
+                Aspect = Aspect.AspectFit,
+                Source = ImageSource.FromFile("icon_updates.png"),
+                WidthRequest = 120,
+                HeightRequest = 170,
+                HorizontalOptions = LayoutOptions.Start,
+            };
+            Image more = new Image
+            {
+                Aspect = Aspect.AspectFit,
+                Source = ImageSource.FromFile("icon_more.png"),
+                WidthRequest = 120,
+                HeightRequest = 170,
+                HorizontalOptions = LayoutOptions.Start,
+            };
             // The root page of your application
             MainPage = new ContentPage
             {
@@ -24,12 +56,8 @@ namespace Test10App
                             Orientation = StackOrientation.Horizontal,
                             HorizontalOptions = LayoutOptions.StartAndExpand,
                             Children =
-                            {
-                                new Label {
-                                    Text = "About Rick",
-                                    FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)),
-                                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                                }
+                            { 
+                                logo
                             }
                         },
                         new StackLayout
@@ -38,11 +66,9 @@ namespace Test10App
                             HorizontalOptions = LayoutOptions.StartAndExpand,
                             Children =
                             {
-                                new Label {
-                                    Text = "My name is Rick Creemers, 22 years old, from Utrecht. Nice to meet you! My big adventure with lots of up's and downs started when I was 16 years old. My sister started studying and decided to move to Amsterdam. My mother, stepfather and little sister also moved out, they followed their life long dream and emigrated to France. I stayed in Holland and after graduating from secondary school I started living on my own in Utrecht. ",
-                                    FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
-                                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                                }
+                                tracker,
+                                updates,
+                                more
                             }
                         }
                     }
